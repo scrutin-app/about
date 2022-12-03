@@ -37,7 +37,7 @@ The private key of the election is shared between multiple trustees.
 
 They have to get together to decrypt the result of the election, improving security.
 
-## Persistant organisations
+## Persistent organisations
 
 Manage a list of persistant users (identified by their public keys).
 
