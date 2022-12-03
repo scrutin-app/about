@@ -17,7 +17,8 @@ pygmentsStyle = "pygments"
   dateFormat = "2006-01-02"
 
   # Footer text, can be markdown
-  footer = "Theme based on [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)"
+  # footer = "Theme based on [Cayman](https://github.com/zwbetz-gh/cayman-hugo-theme)"
+  # footer = "Made with 💚 by [technostuctures](https://technostuctures.org)"
 
   # If true, the CSS/JS for Katex math typesetting are enabled
   katex = true
