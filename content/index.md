@@ -5,11 +5,7 @@
 
 A minimalistic mobile voting app leveraging on the [Belenios](https://www.belenios.org/) voting library.
 
-It will be built using ReScript (leveraging on the OCaml compiler) and React Native (a web version will also exist)
-
-A minimal server will be also built to store elections and votes [(here)](https://gitlab.com/technostructures/scrutin_server).
-
-It will also handle authentication and mailing.
+A minimal server will be also built to store elections and votes [(here)](https://gitlab.com/technostructures/scrutin_server), and handle mailing.
 
 <!-- 
 For every vote, an email will be sent with a one-time-password to cast a vote.
