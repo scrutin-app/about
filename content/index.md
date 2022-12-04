@@ -18,7 +18,7 @@ Only one guardian (the person allowed to tally, i.e. compute the result of the e
 
 ## Users account and decentralized authentication
 
-Authentication will be done using public-key cryptography (for sending ballot).
+Authentication will be done using public-key cryptography.
 
 Organizer can add users by public key directly instead of relying on email. It is the default when the user already has an account.
 
