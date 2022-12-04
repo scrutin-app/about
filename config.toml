@@ -1,5 +1,6 @@
 baseURL = "https://scrutin.app/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Scrutin.app"
 theme = "cayman-hugo-theme"
 
