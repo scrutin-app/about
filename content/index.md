@@ -38,7 +38,7 @@ They have to get together to decrypt the result of the election, improving secur
 
 Manage a list of persistant users (identified by their public keys).
 
-Can organisate multiple elections.
+Can organise multiple elections.
 
 ## Decentralization
 
