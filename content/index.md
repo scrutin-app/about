@@ -6,7 +6,7 @@ title: <(^.^)>
 
 A minimalistic mobile voting app leveraging on the [Belenios](https://www.belenios.org/) voting library.
 
-A minimal server will be also built to store elections and votes [(here)](https://gitlab.com/technostructures/scrutin_server), and handle mailing.
+A minimal server will be also built to store elections and votes [(here)](https://gitlab.com/technostructures/scrutin_server). One-time-password will be sent by email to vote for the election, removing the need of user accounts.
 
 <!-- 
 For every vote, an email will be sent with a one-time-password to cast a vote.
@@ -16,7 +16,7 @@ Only one guardian (the person allowed to tally, i.e. compute the result of the e
 
 # Next steps
 
-## Decentralized authentication
+## Users account and decentralized authentication
 
 Authentication will be done using public-key cryptography (for sending ballot).
 
