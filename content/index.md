@@ -20,13 +20,13 @@ Only one guardian (the person allowed to tally, i.e. compute the result of the e
 
 Authentication will be done using public-key cryptography.
 
-Organizer can add users by public key directly instead of relying on email. It is the default when the user already has an account.
+Organizers can add users by public key instead of relying on email. It is the default when the user already has an account.
 
 ## Auditing interface
 
 - For anyone to verify that their vote has been counted
 
-- For anyone to verify that the result of an election corresponds to the the ballots in the ballot box (voting urn)
+- For anyone to verify that the result of an election corresponds to the ballots in the ballot box (voting urn)
 
 ## Quorum of trustees
 
