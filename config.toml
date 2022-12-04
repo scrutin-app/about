@@ -50,7 +50,7 @@ pygmentsStyle = "pygments"
 [menu]
   [[menu.nav]]
     name = "Demo"
-    url = "https://scrut.in"
+    url = "https://demo.scrutin.app"
     weight = 1
   [[menu.nav]]
     name = "Source code"
