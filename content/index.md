@@ -2,19 +2,31 @@
 title: <(^.^)>
 ---
 
+# What
+
+The most secure voting app in the world.
+
+Everything is made on the device: encryption of the vote, collaborative decryption of the tally (using partial decryption from different entities), verification of the vote
+
+# How
+
+Using the [Helios protocol](https://www.usenix.org/legacy/events/sec08/tech/full_papers/adida/adida.pdf) and INRIA's [Belenios](https://www.belenios.org/) voting library.
+
+# Why
+
+It is useful
+
+# ---
+
 # First version
 
-A minimalistic mobile voting app based on the [Belenios](https://www.belenios.org/) voting library.
-
-A minimal server will be built to store elections and votes [(here)](https://gitlab.com/technostructures/scrutin_server). A one-time-password will be sent to participants by email, removing the need of user accounts.
-
-<!-- 
-For every vote, an email will be sent with a one-time-password to cast a vote.
-
-Only one guardian (the person allowed to tally, i.e. compute the result of the election) is supported.
--->
+A minimal server. A one-time-password will be sent to participants by phone or email, removing the need of user accounts.
 
 # Next steps
+
+## Decentralized storage
+
+Using distributed storage (ex: IPFS) and decentralized identities
 
 ## Decentralized user accounts
 
@@ -37,14 +49,3 @@ They have to get together to decrypt the result of the election, which improves 
 Organisations can choose to manage a list of users (identified by their public keys).
 
 This way they will be able to organise multiple elections with the same set of participants.
-
-## Decentralization
-
-Moving to a decentralized (distributed) architecture.
-
-- Using distributed storage (ex: IPFS) and decentralized identities
-- Using digital signatures for authenticated actions
-  - Managing the list of voters (adding or removing)
-  - Creating an election
-  - Casting a vote
-- Publishing the result doesn't require digital signature as it can be verified.

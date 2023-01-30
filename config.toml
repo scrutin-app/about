@@ -11,7 +11,7 @@ pygmentsStyle = "pygments"
 [params]
   # Header text, can be markdown
   project_name = "Scrutin.app"
-  project_tagline = "Yet another _secure_ voting app"
+  project_tagline = "Secret and verifiable e-voting"
 
   # Date format for post list and single pages
   # For more date formats see https://gohugo.io/functions/format/
