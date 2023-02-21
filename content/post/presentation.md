@@ -1,5 +1,6 @@
 ---
-title: <(^.^)>
+title: "Short presentation"
+date: 2023-01-01
 ---
 
 # What

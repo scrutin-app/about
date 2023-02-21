@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrutin.app</title>
+    <link>https://scrutin.app/</link>
+    <description>Recent content on Scrutin.app</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://scrutin.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&lt;(^.^)&gt;</title>
+      <link>https://scrutin.app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scrutin.app/</guid>
+      <description>What The most secure voting app in the world.
+Everything is made on the device: encryption of the vote, collaborative decryption of the tally (using partial decryption from different entities), verification of the vote
+How Using the Helios protocol and INRIA&amp;rsquo;s Belenios voting library.
+Why It is useful
+&amp;mdash; First version A minimal server. A one-time-password will be sent to participants by phone or email, removing the need of user accounts.</description>
+    </item>
+    
+  </channel>
+</rss>
