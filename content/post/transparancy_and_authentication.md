@@ -1,25 +1,39 @@
 ---
-title: "Privacy and transparancy: A real-world use case of decentralized authentication"
+title: "Real-world decentralized authentication (Privacy and transparency)"
 date: 2023-02-21T17:34:45+05:45
 ---
 
-# Privacy and transparancy
+Every election is represented as an append-only log of authenticated action.
 
-## Everything encrypted
+Because every vote is encrypted, the action log can be made public during or after the election.
 
-Every vote is encrypted. Not even us can see the content of your vote. 
+Using the log you can verify:
+- That your vote has been taken into account
+- That the encrypted total is the sum of all votes
+- That the decrypted total is the decryption of the encrypted total
 
-## Everything monitorable
+## Actors
 
-A log of the election would be made publicly available (either during or shortly after the election depending of the policy) to everyone to monitor that their vote is being counted
+**Users** authenticates their vote using a cryptographic digital signature.
 
-## Everything verifiable
+They uses the _ballot_set_ciphertext_ action
 
-Everyone can verify that the result is the sum of all votes, even though no one can know who has voted for what
+**Organisations** manages the member's public keys, also using digital signatures.
 
-<small>(Open, replayable, but encrypted and anonymous. The underlying data structures is a CRDT append-only log)</small>
+They uses the _ballot_create_, _ballot_update_user_public_key_ and _ballot_delete_ actions
 
-# Authentication
+## Process
+
+- Election creation
+- Adding voters
+- Votes
+- Changing voters credentials when necessary
+- More votes
+- Closing a tallying
+
+_TODO: Add d2 diagram_
+
+# More on authentication
 
 ## Decentralized IDentities (DID)
 
