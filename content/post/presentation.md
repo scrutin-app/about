@@ -1,5 +1,5 @@
 ---
-title: "Short presentation"
+title: "Presentation (draft)"
 date: 2023-01-01
 ---
 
@@ -17,21 +17,13 @@ Using the [Helios protocol](https://www.usenix.org/legacy/events/sec08/tech/full
 
 It is useful
 
-# ---
+# Roadmap
 
-# First version
+## First version
 
 A minimal server. A one-time-password will be sent to participants by phone or email, removing the need of user accounts.
 
-# Next steps
-
-## Decentralized storage
-
-Using distributed storage (ex: IPFS) and decentralized identities
-
-## Decentralized user accounts
-
-A keypair is generated in the app and is used to link users to elections and ballots. It is a decentralized account because the account is stored on the app, not on a server. It replaces sending a token by email.
+## Decentralized storage and user accounts
 
 ## Auditing interface
 
