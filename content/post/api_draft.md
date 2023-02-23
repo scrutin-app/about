@@ -56,6 +56,7 @@ TODO
 // /!\ Done by the organisation
 
 ## ballot.ciphertext
+```json
 {
   event: {
     type: "election.ballot.ciphertext",
@@ -68,6 +69,7 @@ TODO
   eventHash: hash(event),
   sig: sig(secretKey, eventHash)
 }
+```
 // To vote
 // /!\ Done by the user
 // /!\ When aknowledged, could be locked (not allowing revotes) so that the voter has peace of mind /!\
