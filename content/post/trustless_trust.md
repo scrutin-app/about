@@ -19,7 +19,7 @@ C'est quand la cryptographie crée des tunnels informationnels entre certains ac
 
 Cela permet de décentraliser le pouvoir (cyptomonnaies) ou la connaissance/vie privée (chiffrement), tout en exposant publiquement (ou en centralisant) les données chiffrés.
 
-C'est ce qui permet de publier publiquement la liste des comptes (bitcoin) ou d'utiliser un service centralisé (Signal) ou décentralisé (Berty) pour stoquer des messages personnels.
+C'est ce qui permet de publier publiquement la liste des comptes (bitcoin) ou d'utiliser un service centralisé (Signal) ou décentralisé (Berty) pour stocker des messages personnels.
 
 ## Qu'est-ce qu'une architecture TRUSTLESS (trustless trust)
 
