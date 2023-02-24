@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scrutin.app</title>
-    <link>https://scrutin.app/</link>
-    <description>Recent content on Scrutin.app</description>
+    <title>Posts on Scrutin.app</title>
+    <link>https://scrutin.app/post/</link>
+    <description>Recent content in Posts on Scrutin.app</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 19:03:41 +0545</lastBuildDate><atom:link href="https://scrutin.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 19:03:41 +0545</lastBuildDate><atom:link href="https://scrutin.app/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API (draft)</title>
       <link>https://scrutin.app/post/api_draft/</link>

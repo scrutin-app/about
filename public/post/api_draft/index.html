@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  <meta name="description" content="election { event: { type: &#34;election&#34;, params, trustees, orgs: [org1.eventHash, org2.eventHash, ...], }, eventHash: hash(event), orgSigs: [sig(orgSecretKey1, eventHash), sig(orgSecretKey2, eventHash), ...] } ballot { event: { type: &#34;election.ballot&#34;, election: election.eventHash, ballot: { publicKey, // or token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, ...)  ciphertext: &#34;&#34; } }, eventHash: hash(event), orgSig: sig(orgSecretKey, eventHash) } ballot.">
+  <link rel="stylesheet" href="https://scrutin.app/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://scrutin.app/css/cayman.8851aff49d8667ebe56a7e76721bab803d74fc08bce1cc9d4963c168bb2dca25.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>API (draft) | Scrutin.app</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    Scrutin.app
+  </h1>
+  <h2 class="project-tagline">
+    Secret and verifiable e-voting
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="https://demo.scrutin.app" class="btn">Demo</a>
+    
+      
+      
+      
+      
+      <a href="https://gitlab.com/technostructures/scrutin" class="btn">Source code</a>
+    
+      
+      
+      
+      
+      <a href="https://api.scrutin.app" class="btn">API</a>
+    
+      
+      
+      
+      
+      <a href="https://matrix.to/#/!QbYfPCFULPyAOMgnPY:matrix.org?via=matrix.org" class="btn">Discussion</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>API (draft)</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2023-02-22
+  </div>
+  
+  
+  <h2 id="election">election</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;election&#34;</span>,
+    <span style="">params,</span>
+    <span style="">trustees,</span>
+    <span style="">orgs:</span> <span style="">[org1.eventHash,</span> <span style="">org2.eventHash,</span> <span style="">...],</span>
+  }<span style="">,</span>
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">orgSigs:</span> [<span style="">sig(orgSecretKey</span><span style="color:#666">1</span>, <span style="">eventHash)</span>, <span style="">sig(orgSecretKey</span><span style="color:#666">2</span>, <span style="">eventHash)</span>, <span style="">...</span>]
+<span style="">}</span>
+</code></pre></div><h2 id="ballot">ballot</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;election.ballot&#34;</span>,
+    <span style="">election:</span> <span style="">election.eventHash,</span>
+    <span style="">ballot:</span> <span style="">{</span>
+      <span style="">publicKey,</span> <span style="color:#408080;font-style:italic">// or token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, ...)
+</span><span style="color:#408080;font-style:italic"></span>      <span style="">ciphertext:</span> <span style="color:#008000;font-weight:bold">&#34;&#34;</span>
+    }
+  <span style="">},</span>
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">orgSig:</span> <span style="">sig(orgSecretKey,</span> <span style="">eventHash)</span>
+<span style="">}</span>
+</code></pre></div><h2 id="ballotdelete">ballot.delete</h2>
+<p>TODO</p>
+<h2 id="ballotpubkey">ballot.pubkey</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="">{</span>
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;election.ballot.pubkey&#34;</span>,
+    <span style="">previousBallot:</span> <span style="">ballot.eventHash,</span>
+    <span style="">ballot:</span> <span style="">{</span>
+      <span style="">publicKey,</span>
+      <span style="">ciphertext</span> <span style="">#</span> <span style="">empty</span> <span style="">or</span> <span style="">unchanged</span>
+    }
+  <span style="">},</span>
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">orgSig:</span> <span style="">sig(orgSecretKey,</span> <span style="">eventHash)</span>
+<span style="">}</span>
+</code></pre></div><p>// To update pubkey key when creating/recovering account
+// /!\ Done by the organisation</p>
+<h2 id="ballotciphertext">ballot.ciphertext</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;election.ballot.ciphertext&#34;</span>,
+    <span style="">previousBallot:</span> <span style="">ballot.eventHash,</span>
+    <span style="">ballot:</span> <span style="">{</span>
+      <span style="">publicKey,</span> <span style="">#</span> <span style="">unchanged</span>
+      <span style="">ciphertext</span>
+    }
+  <span style="">},</span>
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">sig:</span> <span style="">sig(secretKey,</span> <span style="">eventHash)</span>
+<span style="">}</span>
+</code></pre></div><p>// To vote
+// /!\ Done by the user
+// /!\ When aknowledged, could be locked (not allowing revotes) so that the voter has peace of mind /!\</p>
+<h1 id="annexe-1-auth-server-api">Annexe 1: Auth server API</h1>
+<p>// /!\ Org should maintain their own authentication database (associated for exemple with email or phone number) [not yet 3.0]</p>
+<p>POST /users</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">email</span>
+}
+</code></pre></div><p>=&gt; Send an email with a token</p>
+<p>POST /user/confirm</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">pubkey</span>
+  <span style="">email</span>
+  <span style="">token</span>
+}
+</code></pre></div><h1 id="annexe-2-web-of-trust-part-will-not-be-implemented">Annexe 2: Web-of-trust part (will not be implemented)</h1>
+<h2 id="org">org</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;org&#34;</span>,
+    <span style="">orgPublicKey,</span>
+    <span style="">...</span>
+  }
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">sig:</span> <span style="">sig(orgSecretKey,</span> <span style="">eventHash)</span>
+<span style="">}</span>
+</code></pre></div><h2 id="member">member</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="">event:</span> <span style="">{</span>
+    <span style="">type:</span> <span style="color:#008000;font-weight:bold">&#34;member&#34;</span>,
+    <span style="">org:</span> <span style="">org.eventHash,</span>
+    <span style="">member:</span> <span style="">{</span>
+      <span style="">memberPublicKey</span>
+    }
+  <span style="">},</span>
+  <span style="">eventHash:</span> <span style="">hash(event),</span>
+  <span style="">sig:</span> <span style="">sig(orgSecretKey,</span> <span style="">eventHash)</span>
+<span style="">}</span>
+</code></pre></div><h2 id="memberpubkey">member.pubkey</h2>
+<p>TODO</p>
+<h2 id="memberdelete">member.delete</h2>
+<p>TODO</p>
+
+  
+
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>

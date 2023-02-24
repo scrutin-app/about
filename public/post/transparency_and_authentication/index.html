@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  <meta name="description" content="Every election is represented as an append-only log of authenticated action.
+Because every vote is encrypted, the action log can be made public during or after the election.
+Using the log you can verify:
+ That your vote has been taken into account That the encrypted total is the sum of all votes That the decrypted total is the decryption of the encrypted total  Actors Users authenticates their vote using a cryptographic digital signature.">
+  <link rel="stylesheet" href="https://scrutin.app/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://scrutin.app/css/cayman.8851aff49d8667ebe56a7e76721bab803d74fc08bce1cc9d4963c168bb2dca25.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Real-world decentralized authentication (Privacy and transparency) | Scrutin.app</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    Scrutin.app
+  </h1>
+  <h2 class="project-tagline">
+    Secret and verifiable e-voting
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="https://demo.scrutin.app" class="btn">Demo</a>
+    
+      
+      
+      
+      
+      <a href="https://gitlab.com/technostructures/scrutin" class="btn">Source code</a>
+    
+      
+      
+      
+      
+      <a href="https://api.scrutin.app" class="btn">API</a>
+    
+      
+      
+      
+      
+      <a href="https://matrix.to/#/!QbYfPCFULPyAOMgnPY:matrix.org?via=matrix.org" class="btn">Discussion</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Real-world decentralized authentication (Privacy and transparency)</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2023-02-21
+  </div>
+  
+  
+  <p>Every election is represented as an append-only log of authenticated action.</p>
+<p>Because every vote is encrypted, the action log can be made public during or after the election.</p>
+<p>Using the log you can verify:</p>
+<ul>
+<li>That your vote has been taken into account</li>
+<li>That the encrypted total is the sum of all votes</li>
+<li>That the decrypted total is the decryption of the encrypted total</li>
+</ul>
+<h2 id="actors">Actors</h2>
+<p><strong>Users</strong> authenticates their vote using a cryptographic digital signature.</p>
+<p>They uses the <em>ballot_set_ciphertext</em> action</p>
+<p><strong>Organisations</strong> manages the member&rsquo;s public keys, also using digital signatures.</p>
+<p>They uses the <em>ballot_create</em>, <em>ballot_update_user_public_key</em> and <em>ballot_delete</em> actions</p>
+<h2 id="process">Process</h2>
+<ul>
+<li>Election creation</li>
+<li>Adding voters</li>
+<li>Votes</li>
+<li>Changing voters credentials when necessary</li>
+<li>More votes</li>
+<li>Closing a tallying</li>
+</ul>
+<p><em>TODO: Add d2 diagram</em></p>
+<h1 id="more-on-authentication">More on authentication</h1>
+<h2 id="decentralized-identities-did">Decentralized IDentities (DID)</h2>
+<p>Users should be able to interact to the network without the need for a central authority.</p>
+<p>When selecting a good decentralized authentication scheme, bitcoin-like cryptography is the first thing that came to mind.</p>
+<p>In bitcoin people can directly interact with the network without the need of a third party, using only the knowledge of their wallet&rsquo;s secret key.</p>
+<p><strong>The ballot.cipertext events are managed by users</strong></p>
+<h2 id="authentication-organisations-ao">Authentication Organisations (AO)</h2>
+<p>By definition Decentralized Identities can be generated at will.</p>
+<p>We need a mechanism to manage the member list, so every real-world member has exactly one identity, one voice.</p>
+<p>Autentication organisation are also necessaries when someone loose access to his DID (by loosing access to his device for exemple).</p>
+<p><strong>The ballot.create and ballot.pubkey events are managed by organisations</strong></p>
+<h2 id="decentralized-authenticaton">Decentralized Authenticaton</h2>
+<p>Different organisations can co-organize an election.</p>
+<p>Each AO add their own members to the election (<strong>ballot</strong> event).</p>
+<p>The election rules could set a maximum to the number of ballot an organisation could provide.</p>
+<p>If the election rules allows it, the AO is able to help a user recover his identity if necessary (using the <strong>ballot.pubkey</strong> event), by verifing him by email/phone-number for exemple, or by having him coming to the registration office with his ID card.</p>
+
+  
+
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+  </span>
+</footer>
+
+  </section>
+  
+  
+
+</body>
+</html>
