@@ -6,29 +6,55 @@ date: 2023-02-22T19:03:41+05:45
 ## election
 ```json
 {
-  event: {
-    type: "election",
-    params,
-    trustees,
-    orgs: [org1.eventHash, org2.eventHash, ...],
+  "event": {
+    "type": "election",
+
+    "params": election.params,
+    "trustees": election.trustees,
+    "credentials": election.credentials,
+
+    // This is unrelated to trustees, it's used to manage the ballot/voter list
+    "publicKey": orgUser.publicKey
   },
-  eventHash: hash(event),
-  orgSigs: [sig(orgSecretKey1, eventHash), sig(orgSecretKey2, eventHash), ...]
+  "eventHash": hash(event)
 }
 ```
 
 ## ballot
 ```json
 {
-  event: {
-    type: "election.ballot",
-    election: election.eventHash,
-    ballot: {
-      publicKey, // or token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, ...)
-      ciphertext: ""
-    }
+  "event": {
+    "type": "election.ballot",
+
+    "election.eventHash": election.eventHash,
+    "election.publicKey": election.publicKey,
+
+    // This is here to authenticate the uer when he wants to vote. The user is the only owner of the secretKey.
+    "election.ballot.publicKey": user.publicKey,
+    // or ballot.token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, other...)
+    "election.ballot.ciphertext": ""
   },
-  eventHash: hash(event),
+  "eventHash": hash(event),
+  "auth.publicKey": election.publicKey,
+  "auth.signature": sig(election.privateKey, hash(event))
+}
+```
+
+## ballot.update
+```json
+{
+  "event": {
+    "type": "election.ballot.update",
+    "election.eventHash": election.eventHash,
+    "election.publicKey": election.publicKey,
+    "election.ballot.eventHash": ballot.eventHash,
+    "election.ballot.publicKey": user.publicKey || newUser.publicKey,
+    "election.ballot.ciphertext": null || ciphertext,
+  },
+  "eventHash": hash(event),
+  "auth.publicKey": election.publicKey,
+  "auth.signature": sig(election.privateKey, hash(event))
+
   orgSig: sig(orgSecretKey, eventHash)
 }
 ```
@@ -39,9 +65,10 @@ TODO
 ## ballot.pubkey
 ```json
 {
-{
-  event: {
-    type: "election.ballot.pubkey",
+  "event": {
+    "type": "election.ballot.pubkey",
+    "election.ballot.eventHash": ballot.eventHash,
+    "election.ballot.publicKey": ballot.eventHash,
     previousBallot: ballot.eventHash,
     ballot: {
       publicKey,
