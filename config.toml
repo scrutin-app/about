@@ -2,7 +2,7 @@ baseURL = "https://scrutin.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Scrutin.app"
-theme = "cayman-hugo-theme"
+#theme = "cayman-hugo-theme"
 
 # Syntax highlighting
 pygmentsCodefences = true
@@ -31,7 +31,7 @@ pygmentsStyle = "pygments"
 
   # Header colors
   header_heading_color = "#fff"
-  header_background_color = "#26323c"
+  header_background_color = "#f17829"
   header_background_color_secondary = "#27343e"
 
   # Text colors
@@ -55,7 +55,7 @@ pygmentsStyle = "pygments"
   #  url = "https://demo.scrutin.app"
   #  weight = 1
   [[menu.nav]]
-    name = "Source"
+    name = "Source code"
     url = "https://github.com/scrutin-app/scrutin"
     weight = 2
   #[[menu.nav]]
