@@ -6,14 +6,40 @@
     <description>Recent content in Posts on Scrutin.app</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 19:03:41 +0545</lastBuildDate><atom:link href="https://scrutin.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Feb 2023 09:06:55 +0545</lastBuildDate><atom:link href="https://scrutin.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic_user_stories</title>
+      <link>https://scrutin.app/post/basic_user_stories/</link>
+      <pubDate>Sat, 25 Feb 2023 09:06:55 +0545</pubDate>
+      
+      <guid>https://scrutin.app/post/basic_user_stories/</guid>
+      <description>User story 1 - Création d&amp;rsquo;une election (app) Bob télécharge l&amp;rsquo;app.
+Bob s&amp;rsquo;occupe des formalités nécessaires (création d&amp;rsquo;un compte ? permissions ?)
+Bob crée une élection
+User story 1B - Création d&amp;rsquo;une election (web) User story 2 - Voter dans une élection (app) Alice recoit un message (message perso de Bob, ou mail ou SMS du serveur) qui l&amp;rsquo;invite à rejoindre une election
+Elle est guidée dans le téléchargement de l&amp;rsquo;app</description>
+    </item>
+    
+    <item>
+      <title>Trustless_trust</title>
+      <link>https://scrutin.app/post/trustless_trust/</link>
+      <pubDate>Fri, 24 Feb 2023 20:59:58 +0545</pubDate>
+      
+      <guid>https://scrutin.app/post/trustless_trust/</guid>
+      <description>Architecture pair-a-pair Système centralisé et systeme décentralisé Dans un système centralisé si Alice veut parler à Bob :
+Alice envoie son message au serveur (Simon) qui le retransmet à Bob.
+Dans un système pair à pair, elle envoie son message directement à Bob, sans avoir besoin de Simon.
+Décentralisation virtuelle C&amp;rsquo;est quand la cryptographie crée des tunnels informationnels entre certains actors (par exemple par le partage de clés secrètes).
+Cela permet de décentraliser le pouvoir (cyptomonnaies) ou la connaissance/vie privée (chiffrement), tout en exposant publiquement (ou en centralisant) les données chiffrés.</description>
+    </item>
+    
     <item>
       <title>API (draft)</title>
       <link>https://scrutin.app/post/api_draft/</link>
       <pubDate>Wed, 22 Feb 2023 19:03:41 +0545</pubDate>
       
       <guid>https://scrutin.app/post/api_draft/</guid>
-      <description>election { event: { type: &amp;#34;election&amp;#34;, params, trustees, orgs: [org1.eventHash, org2.eventHash, ...], }, eventHash: hash(event), orgSigs: [sig(orgSecretKey1, eventHash), sig(orgSecretKey2, eventHash), ...] } ballot { event: { type: &amp;#34;election.ballot&amp;#34;, election: election.eventHash, ballot: { publicKey, // or token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, ...)  ciphertext: &amp;#34;&amp;#34; } }, eventHash: hash(event), orgSig: sig(orgSecretKey, eventHash) } ballot.</description>
+      <description>election { &amp;#34;event&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;election&amp;#34;, &amp;#34;params&amp;#34;: election.params, &amp;#34;trustees&amp;#34;: election.trustees, &amp;#34;credentials&amp;#34;: election.credentials, // This is unrelated to trustees, it&amp;#39;s used to manage the ballot/voter list &amp;#34;publicKey&amp;#34;: orgUser.publicKey }, &amp;#34;eventHash&amp;#34;: hash(event) } ballot { &amp;#34;event&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;election.ballot&amp;#34;, &amp;#34;election.eventHash&amp;#34;: election.eventHash, &amp;#34;election.publicKey&amp;#34;: election.publicKey, // This is here to authenticate the uer when he wants to vote. The user is the only owner of the secretKey. &amp;#34;election.ballot.publicKey&amp;#34;: user.publicKey, // or ballot.token, but a publicKey can always be used instead of a hashed-token by sending the secretKey in place of the hash preimage (by mail, email, other.</description>
     </item>
     
     <item>
@@ -25,7 +51,7 @@
       <description>Every election is represented as an append-only log of authenticated action.
 Because every vote is encrypted, the action log can be made public during or after the election.
 Using the log you can verify:
- That your vote has been taken into account That the encrypted total is the sum of all votes That the decrypted total is the decryption of the encrypted total  Actors Users authenticates their vote using a cryptographic digital signature.</description>
+That your vote has been taken into account That the encrypted total is the sum of all votes That the decrypted total is the decryption of the encrypted total Actors Users authenticates their vote using a cryptographic digital signature.</description>
     </item>
     
     <item>

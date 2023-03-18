@@ -10,8 +10,9 @@ pygmentsStyle = "pygments"
 
 [params]
   # Header text, can be markdown
-  project_name = "Scrutin.app"
-  project_tagline = "Secret and verifiable e-voting"
+  project_name = "Scrutin (/ˈskɹuː.tɪ.n/)"
+  #project_tagline = "Secret and verifiable e-voting"
+  project_tagline = "__"
 
   # Date format for post list and single pages
   # For more date formats see https://gohugo.io/functions/format/
@@ -49,19 +50,19 @@ pygmentsStyle = "pygments"
   hr_border_color = "#eff0f1"
 
 [menu]
+  #[[menu.nav]]
+  #  name = "Demo"
+  #  url = "https://demo.scrutin.app"
+  #  weight = 1
   [[menu.nav]]
-    name = "Demo"
-    url = "https://demo.scrutin.app"
-    weight = 1
-  [[menu.nav]]
-    name = "Source code"
-    url = "https://gitlab.com/technostructures/scrutin"
+    name = "Source"
+    url = "https://github.com/scrutin-app/scrutin"
     weight = 2
-  [[menu.nav]]
-    name = "API"
-    url = "https://api.scrutin.app"
-    weight = 3
-  [[menu.nav]]
-    name = "Discussion"
-    url = "https://matrix.to/#/!QbYfPCFULPyAOMgnPY:matrix.org?via=matrix.org"
-    weight = 4
+  #[[menu.nav]]
+  #  name = "API"
+  #  url = "https://api.scrutin.app"
+  #  weight = 3
+  #[[menu.nav]]
+  #  name = "Discussion"
+  #  url = "https://matrix.to/#/!QbYfPCFULPyAOMgnPY:matrix.org?via=matrix.org"
+  #  weight = 4
