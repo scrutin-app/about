@@ -7,5 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://scrutin.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://scrutin.app/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://scrutin.app/privacy/</guid>
+      <description>Privacy Policy Scrutin and its developer take your privacy very seriously.
+It uses no third-party analytics or advertising frameworks.
+Scrutin logs no information on you and has no interest in doing such.
+Scrutin does not collect, transmit, distribute or sell your data.</description>
+    </item>
+    
   </channel>
 </rss>
